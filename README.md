@@ -6,8 +6,6 @@ This repository is organized as an engineering portfolio project for embedded sy
 
 **Demo:** [R3Bin final demo video](https://youtu.be/eC5EfTwEhFM)
 
-![R3Bin control flow](media/images/control-flow.png)
-
 ## Overview
 
 R3Bin automates the full waste-sorting cycle:
@@ -254,9 +252,8 @@ Classification validation reported in the final presentation:
 
 - Final demo video: [https://youtu.be/eC5EfTwEhFM](https://youtu.be/eC5EfTwEhFM)
 - Final presentation: [`docs/final-presentation.pdf`](docs/final-presentation.pdf)
-- Control-flow diagram: [`media/images/control-flow.png`](media/images/control-flow.png)
 
-The local `media/demo/` folder may contain the final MP4 for convenience, but video files are intentionally ignored by git to keep the repository lightweight.
+The full video is hosted externally so the repository stays lightweight and GitHub-compatible.
 
 ## Repository Structure
 
@@ -268,7 +265,6 @@ R3Bin/
 ├── print-kits/     # Exported 3MF files for 3D printed parts
 ├── manufacturing/  # PVC/acrylic cutting files and laser-cut documentation
 ├── docs/           # Final presentation and technical documentation
-├── media/          # Images and demo references
 └── README.md       # Portfolio overview
 ```
 
@@ -297,4 +293,3 @@ forgecad run forgecad/smart-bin-layout.forge.js
 ## Notes
 
 The final physical prototype uses manually cut styrene dividers inside the bucket. Some ForgeCAD print kits represent earlier mechanical iterations and are preserved to document the engineering process, but they were not all used in the final assembly.
-

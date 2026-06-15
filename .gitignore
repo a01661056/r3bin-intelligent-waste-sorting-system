@@ -14,11 +14,10 @@ raspberry/captures/
 
 # Keep large demo videos outside normal git history.
 # Use the YouTube link in README or attach videos to GitHub Releases.
-media/demo/*.mp4
+*.mp4
 
 # Local editor files
 .vscode/
 .idea/
 *.swp
 *.swo
-
