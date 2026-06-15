@@ -7,17 +7,13 @@
 ![Robotics](https://img.shields.io/badge/Robotics-Motion%20Control-purple)
 ![Mechatronics](https://img.shields.io/badge/Mechatronics-Physical%20Prototype-black)
 
-R3Bin is a fully functional intelligent waste-classification prototype capable of automatically identifying, sorting, and storing waste objects. The system integrates an ATmega16 real-time controller, a Raspberry Pi 5 computer-vision subsystem, TensorFlow Lite image classification, UART communication, I2C/TWI communication, EEPROM persistence, MG996R servo control, NEMA 17 stepper motor positioning, sensors, a custom user interface, and a physical structure manufactured through 3D printing and laser-cut fabrication.
+R3Bin is a complete physical prototype designed to automate waste classification through embedded control, local computer vision, real-time actuation, and custom mechanical sorting. It identifies, sorts, and stores waste objects by integrating an ATmega16 real-time controller, a Raspberry Pi 5 computer-vision subsystem, TensorFlow Lite image classification, UART communication, I2C/TWI communication, EEPROM persistence, MG996R servo control, NEMA 17 stepper motor positioning, sensors, a custom user interface, and a physical structure manufactured through 3D printing and laser-cut fabrication.
 
-This repository is organized as an engineering portfolio project for embedded systems, robotics, hardware integration, computer vision, and physical prototyping. R3Bin is not a simulation or CAD-only concept: it was built, assembled, calibrated, tested, and demonstrated as a complete physical prototype.
-
-**Recruiter summary:** R3Bin combines embedded firmware, computer vision, AI inference, mechanical design, manufacturing, real-time control, and hardware/software integration into a functioning physical system rather than a simulation, mockup, or CAD-only project.
+R3Bin is not a simulation, mockup, or CAD-only concept. It combines embedded firmware, computer vision, AI inference, mechanical design, manufacturing, real-time control, and hardware/software integration into a functioning system that was built, assembled, calibrated, tested, and demonstrated as a working prototype.
 
 **Demo:** [R3Bin final demo video](https://youtu.be/eC5EfTwEhFM)
 
 ## Technologies
-
-Recruiter-friendly technical scope:
 
 | Domain | Technologies |
 | --- | --- |
@@ -98,9 +94,9 @@ The final prototype classifies waste into six categories:
 
 ## My Role
 
-Ricardo Morán Ávila served as one of the primary technical contributors responsible for integrating the embedded controller, computer vision subsystem, communication interfaces, and electromechanical sorting mechanisms into a complete working prototype. His work focused on making the independent subsystems operate together reliably as a single physical system.
+My primary contributions focused on embedded systems integration, firmware architecture, hardware interfacing, and system-level integration. I worked on connecting the ATmega16 controller, Raspberry Pi vision subsystem, communication interfaces, and electromechanical sorting mechanisms into a complete working prototype. A major part of my work was making the independent subsystems operate together reliably as a single physical system.
 
-Ricardo Morán Ávila worked primarily on embedded systems integration, firmware architecture, hardware interfacing, UART communication, I2C/TWI communication, ATmega16 firmware, EEPROM persistence, operating-mode logic, actuator control, sensor integration, testing, debugging, calibration, and system-level integration between the microcontroller, Raspberry Pi, computer vision subsystem, and mechanical mechanisms.
+This included work on UART communication, I2C/TWI communication, ATmega16 firmware, EEPROM persistence, operating-mode logic, actuator control, sensor integration, testing, debugging, calibration, and system-level integration between the microcontroller, Raspberry Pi, computer vision subsystem, and mechanical mechanisms.
 
 Specific areas of ownership included:
 
@@ -116,7 +112,7 @@ Specific areas of ownership included:
 
 ## Collaboration
 
-R3Bin was developed as a team project. The repository does not present the system as a solo effort.
+R3Bin was developed as a team project rather than a solo build.
 
 Team members:
 
@@ -233,7 +229,7 @@ Core firmware responsibilities:
 - Game-mode scoring logic
 - Stats-mode display and reset logic
 
-Focused hardware test programs were used during development for UART, LCD, I2C/PCA9685, KW11, NEMA calibration, and servo-channel validation. The public portfolio repository keeps only the final working firmware source in `firmware/atmega16.c`.
+Focused hardware test programs were used during development for UART, LCD, I2C/PCA9685, KW11, NEMA calibration, and servo-channel validation. This repository keeps only the final working firmware source in `firmware/atmega16.c`.
 
 ## Computer Vision Pipeline
 
