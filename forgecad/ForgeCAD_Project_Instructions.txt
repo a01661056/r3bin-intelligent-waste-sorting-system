@@ -1,0 +1,156 @@
+R3Bin ForgeCAD Project Instructions
+===================================
+
+1. How to open the project in ForgeCAD
+-------------------------------------
+
+Open Terminal, go to the folder that contains the ForgeCAD files, and run:
+
+  npx forgecad dev
+
+If you are still inside the original project folder and want to use the local
+installed ForgeCAD tools, you can also run:
+
+  ./.tools/node_modules/.bin/forgecad dev
+
+ForgeCAD will start a local server and show a URL similar to:
+
+  http://127.0.0.1:5173
+
+Open that URL in the browser and select the .forge.js file you want to view.
+
+
+2. Most important model files
+-----------------------------
+
+The main model is:
+
+  smart-bin-layout.forge.js
+
+This file imports other files and assets, so these should stay together in the
+same folder structure:
+
+  smart-bin-layout.forge.js
+  rotating-disk-module.forge.js
+  bucket-storage-bins.forge.js
+  printed-structure-brackets.forge.js
+  c270tripod-hole-edit.forge.js
+  fc51-holder-box-edit.forge.js
+  pvc-cut-layout.forge.js
+  styrene-cut-layout.forge.js
+  assets/
+
+Do not move only smart-bin-layout.forge.js by itself. The imports are relative,
+so the other .forge.js files and the assets folder must move with it.
+
+
+3. Important print kit files
+----------------------------
+
+Useful final print kits include:
+
+  print-kit-level0-ui-cover-plate.3mf
+  print-kit-level0-blank-cover-plate.3mf
+  print-kit-lid-with-stick.3mf
+  print-kit-photo-booth-tray.3mf
+  print-kit-servo-holders.3mf
+  print-kit-raised-inlet-collar.3mf
+  print-kit-level1-inlet-collar-slide.3mf
+  print-kit-floor-collar-circular-opening.3mf
+  print-kit-level2-tall-funnel.3mf
+  print-kit-kw11-trigger-and-prism.3mf
+  print-kit-camera-sensor-holders.3mf
+  print-kit-bucket-*.3mf
+  level2-socket-hub-arms-print-kit.3mf
+  level2-motor-hub-receiver-print-kit.3mf
+
+The corresponding .forge.js files should also be kept if you want to edit or
+regenerate the print kits later.
+
+
+4. How to validate a model
+--------------------------
+
+From the project folder, run:
+
+  npx forgecad run smart-bin-layout.forge.js
+
+For a specific print kit:
+
+  npx forgecad run print-kit-photo-booth-tray.forge.js
+
+This checks that the file can load and prints geometry diagnostics.
+
+
+5. How to export a 3MF
+----------------------
+
+Example:
+
+  npx forgecad export 3mf level2-socket-hub-arms-print-kit.forge.js --output level2-socket-hub-arms-print-kit.3mf --quality high
+
+For most final prints, use:
+
+  --quality high
+
+Use 3MF instead of STL when possible because it preserves multiple objects and
+object names better.
+
+
+6. If moving to another folder
+------------------------------
+
+Recommended clean folder structure:
+
+  R3Bin_Final_Project/
+    ForgeCAD/
+      smart-bin-layout.forge.js
+      rotating-disk-module.forge.js
+      bucket-storage-bins.forge.js
+      printed-structure-brackets.forge.js
+      c270tripod-hole-edit.forge.js
+      fc51-holder-box-edit.forge.js
+      pvc-cut-layout.forge.js
+      styrene-cut-layout.forge.js
+      assets/
+    Print_Kits/
+    Firmware_ATmega16/
+    RaspberryPi_Vision/
+    Presentation/
+    Video/
+    Measurements/
+
+If you move the files outside the current Codex workspace, Codex may not be able
+to access them unless you open a new Codex session from the new folder.
+
+
+7. Firmware and Raspberry files to keep
+---------------------------------------
+
+ATmega16 firmware:
+
+  firmware/atmega16.c
+  firmware/Makefile
+
+Raspberry Pi vision script:
+
+  r3bin_uart_camera_capture.py
+
+Raspberry Pi model files should be stored on the Pi at:
+
+  ~/r3bin/model/model_unquant.tflite
+  ~/r3bin/model/labels.txt
+
+Captured photos are saved to:
+
+  ~/r3bin/captures/
+
+
+8. Notes
+--------
+
+- Keep the assets folder with the ForgeCAD files.
+- Keep .forge.js files if you want editable parametric models.
+- Keep .3mf files if you only need to print.
+- Frozen files are old checkpoints and are optional unless you want history.
+- The current main model is smart-bin-layout.forge.js.

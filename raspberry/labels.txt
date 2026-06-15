@@ -1,0 +1,7 @@
+0 metal
+1 batteries
+2 organic
+3 plastic
+4 paper_carboard
+5 other
+6 no_object

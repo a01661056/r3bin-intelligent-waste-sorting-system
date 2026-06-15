@@ -1,0 +1,24 @@
+.DS_Store
+__pycache__/
+*.pyc
+
+# AVR build artifacts
+firmware/build/
+*.elf
+*.hex
+*.o
+
+# Runtime captures generated on the Raspberry Pi
+captures/
+raspberry/captures/
+
+# Keep large demo videos outside normal git history.
+# Use the YouTube link in README or attach videos to GitHub Releases.
+media/demo/*.mp4
+
+# Local editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
