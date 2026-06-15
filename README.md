@@ -33,17 +33,35 @@ Recruiter-friendly technical scope:
 
 ## Project Visuals
 
-Image placeholders for future repository media:
+### Complete Physical Prototype
 
-| View | Placeholder |
-| --- | --- |
-| Complete physical prototype | `docs/images/complete-physical-prototype.jpg` |
-| Internal system architecture | `docs/images/internal-system-architecture.jpg` |
-| Waste sorting process | `docs/images/waste-sorting-process.jpg` |
-| Mechanical structure and storage system | `docs/images/mechanical-structure-storage.jpg` |
-| Electronics and embedded control system | `docs/images/electronics-embedded-control.jpg` |
+![Complete physical R3Bin prototype](docs/images/complete-physical-prototype.jpg)
 
-Images are intentionally not committed yet because the final presentation already contains the current visual documentation. These paths can be added later without changing the README structure.
+Complete assembled R3Bin prototype with the user-facing interface, inlet mechanism, PVC/acrylic structure, and storage body.
+
+### Internal Mechanism Through Acrylic
+
+![Internal R3Bin mechanism through acrylic](docs/images/internal-mechanism.jpg)
+
+Rear acrylic view showing the internal sorting path, actuation mechanisms, rotating disk area, and storage region.
+
+### Waste Sorting Process
+
+![R3Bin waste sorting process collage](docs/images/waste-sorting-process.jpg)
+
+End-to-end sorting sequence from object insertion and photo booth capture to classification, disk positioning, and storage.
+
+### User Interface and Embedded Control
+
+![R3Bin user interface](docs/images/user-interface.jpg)
+
+User-facing control panel with LCD feedback, mode selector, category LEDs, buttons, and ultrasonic detection.
+
+### CAD Model vs Physical Build
+
+![R3Bin CAD model vs physical build](docs/images/cad-vs-irl.jpg)
+
+ForgeCAD model compared with the final physical prototype, showing the transition from parametric design to manufactured system.
 
 ## Overview
 
