@@ -1,10 +1,49 @@
 # R3Bin: Intelligent Waste Sorting System
 
+![Embedded Systems](https://img.shields.io/badge/Embedded%20Systems-ATmega16-blue)
+![Computer Vision](https://img.shields.io/badge/Computer%20Vision-OpenCV-green)
+![AI Inference](https://img.shields.io/badge/AI%20Inference-TensorFlow%20Lite-orange)
+![Real Time Control](https://img.shields.io/badge/Real--Time%20Control-Actuators-red)
+![Robotics](https://img.shields.io/badge/Robotics-Motion%20Control-purple)
+![Mechatronics](https://img.shields.io/badge/Mechatronics-Physical%20Prototype-black)
+
 R3Bin is a fully functional intelligent waste-classification prototype capable of automatically identifying, sorting, and storing waste objects. The system integrates an ATmega16 real-time controller, a Raspberry Pi 5 computer-vision subsystem, TensorFlow Lite image classification, UART communication, I2C/TWI communication, EEPROM persistence, MG996R servo control, NEMA 17 stepper motor positioning, sensors, a custom user interface, and a physical structure manufactured through 3D printing and laser-cut fabrication.
 
 This repository is organized as an engineering portfolio project for embedded systems, robotics, hardware integration, computer vision, and physical prototyping. R3Bin is not a simulation or CAD-only concept: it was built, assembled, calibrated, tested, and demonstrated as a complete physical prototype.
 
+**Recruiter summary:** R3Bin combines embedded firmware, computer vision, AI inference, mechanical design, manufacturing, real-time control, and hardware/software integration into a functioning physical system rather than a simulation, mockup, or CAD-only project.
+
 **Demo:** [R3Bin final demo video](https://youtu.be/eC5EfTwEhFM)
+
+## Technologies
+
+Recruiter-friendly technical scope:
+
+| Domain | Technologies |
+| --- | --- |
+| Embedded control | ATmega16, AVR-GCC, direct register-level C firmware, GPIO, ADC |
+| Computer vision | Raspberry Pi 5, Logitech C270 webcam, OpenCV |
+| AI inference | TensorFlow Lite / LiteRT, Teachable Machine exported model |
+| Communication | UART serial protocol, I2C/TWI bus |
+| Persistence | ATmega16 EEPROM for game high score and per-category statistics |
+| Actuation | PCA9685 PWM driver, MG996R servos, NEMA 17 stepper motor |
+| Motor control | DRV8825 stepper driver, KW11 homing switch, calibrated sector positioning |
+| User interface | 16x2 LCD, category LEDs, potentiometer, push buttons, active buzzer |
+| Mechanical design | ForgeCAD, 3D printing, laser-cut PVC/acrylic, PETG/PLA parts, styrene dividers |
+
+## Project Visuals
+
+Image placeholders for future repository media:
+
+| View | Placeholder |
+| --- | --- |
+| Complete physical prototype | `docs/images/complete-physical-prototype.jpg` |
+| Internal system architecture | `docs/images/internal-system-architecture.jpg` |
+| Waste sorting process | `docs/images/waste-sorting-process.jpg` |
+| Mechanical structure and storage system | `docs/images/mechanical-structure-storage.jpg` |
+| Electronics and embedded control system | `docs/images/electronics-embedded-control.jpg` |
+
+Images are intentionally not committed yet because the final presentation already contains the current visual documentation. These paths can be added later without changing the README structure.
 
 ## Overview
 
@@ -40,6 +79,8 @@ The final prototype classifies waste into six categories:
 - Validated the complete system with timing, energy, capacity, and classification measurements.
 
 ## My Role
+
+Ricardo Morán Ávila served as one of the primary technical contributors responsible for integrating the embedded controller, computer vision subsystem, communication interfaces, and electromechanical sorting mechanisms into a complete working prototype. His work focused on making the independent subsystems operate together reliably as a single physical system.
 
 Ricardo Morán Ávila worked primarily on embedded systems integration, firmware architecture, hardware interfacing, UART communication, I2C/TWI communication, ATmega16 firmware, EEPROM persistence, operating-mode logic, actuator control, sensor integration, testing, debugging, calibration, and system-level integration between the microcontroller, Raspberry Pi, computer vision subsystem, and mechanical mechanisms.
 
@@ -82,6 +123,32 @@ R3Bin separates responsibilities across real-time control, AI inference, user in
 | LCD/LED user interface | Mode feedback, classification result, score/stats display, category indication |
 | EEPROM persistence | Stores high score and per-category object counts after power loss |
 | Mechanical sorting structure | Laser-cut PVC/acrylic body, printed mechanisms, rotating disk, photo booth, bucket storage |
+
+## Validation Results
+
+| Metric | Result |
+| --- | ---: |
+| Average boot time | 6.18 s |
+| Average Raspberry Pi boot time | 10.02 s |
+| Average classification time | 2.18 s |
+| Average full sorting cycle time | 13.56 s |
+| Overall classification accuracy | 80% |
+| Maximum object size | 8 cm x 8 cm x 8 cm |
+| Maximum object weight | 300 g |
+| Minimum object weight | 5 g |
+| Total storage capacity | 15 L |
+| Capacity per compartment | 2.5 L |
+| Peak measured consumption | 26.6 VA / 17.5 W |
+
+Classification validation reported in the final presentation:
+
+| Category | Correct / Tested |
+| --- | ---: |
+| Plastic | 10 / 10 |
+| Paper/cardboard | 8 / 10 |
+| Metal | 8 / 10 |
+| Organic | 8 / 10 |
+| Batteries | 6 / 10 |
 
 ## Hardware Stack
 
@@ -148,7 +215,7 @@ Core firmware responsibilities:
 - Game-mode scoring logic
 - Stats-mode display and reset logic
 
-The firmware also includes focused hardware test programs for UART, LCD, I2C/PCA9685, KW11, NEMA calibration, and servo-channel validation.
+Focused hardware test programs were used during development for UART, LCD, I2C/PCA9685, KW11, NEMA calibration, and servo-channel validation. The public portfolio repository keeps only the final working firmware source in `firmware/atmega16.c`.
 
 ## Computer Vision Pipeline
 
@@ -211,32 +278,6 @@ Mechanical features:
 
 ForgeCAD was used to design and iterate the physical structure, validate clearances, generate print kits, and produce manufacturing layouts.
 
-## Validation Results
-
-| Metric | Result |
-| --- | ---: |
-| Average boot time | 6.18 s |
-| Average Raspberry Pi boot time | 10.02 s |
-| Average classification time | 2.18 s |
-| Average full sorting cycle time | 13.56 s |
-| Overall classification accuracy | 80% |
-| Maximum object size | 8 cm x 8 cm x 8 cm |
-| Maximum object weight | 300 g |
-| Minimum object weight | 5 g |
-| Total storage capacity | 15 L |
-| Capacity per compartment | 2.5 L |
-| Peak measured consumption | 26.6 VA / 17.5 W |
-
-Classification validation reported in the final presentation:
-
-| Category | Correct / Tested |
-| --- | ---: |
-| Plastic | 10 / 10 |
-| Paper/cardboard | 8 / 10 |
-| Metal | 8 / 10 |
-| Organic | 8 / 10 |
-| Batteries | 6 / 10 |
-
 ## Engineering Challenges
 
 - Stabilizing objects for reliable image capture inside a compact bin volume.
@@ -259,7 +300,7 @@ The full video is hosted externally so the repository stays lightweight and GitH
 
 ```text
 R3Bin/
-├── firmware/       # ATmega16 firmware, Makefile, and hardware test programs
+├── firmware/       # Final ATmega16 firmware and Makefile
 ├── raspberry/      # Raspberry Pi vision + UART script, labels, TFLite model
 ├── forgecad/       # Parametric ForgeCAD model files and CAD reference assets
 ├── print-kits/     # Exported 3MF files for 3D printed parts
